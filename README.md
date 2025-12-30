@@ -15,6 +15,7 @@ Dieses Projekt bietet eine schlüsselfertige Lösung für die lokale Analyse von
 - **Windows 10/11** mit **WSL 2** installiert.
 - **Docker Desktop** (mit aktiviertem WSL 2 Backend).
 - **NVIDIA GPU** (empfohlen für flüssige Performance).
+- **Sudo für Windows** (optional für Windows 11, um Bash-Scripte einfacher auszuführen).
 
 ## 🛠️ Installation & Start
 
@@ -28,8 +29,9 @@ cd KI-Nutzung
 Wählen Sie das passende Script für Ihre Umgebung:
 
 - **Windows (PowerShell Admin):**
+  Falls die Skriptausführung deaktiviert ist, führen Sie zuerst `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` aus oder nutzen Sie den Bypass:
   ```powershell
-  .\deploy_ai_stack.ps1
+  powershell -ExecutionPolicy Bypass -File .\deploy_ai_stack.ps1
   ```
 - **WSL / Linux (Bash):**
   ```bash
@@ -37,10 +39,23 @@ Wählen Sie das passende Script für Ihre Umgebung:
   ./deploy_ai_stack.sh
   ```
 
+> **Hinweis für Windows 11:** Falls Sie das Bash-Script direkt in der Windows-Konsole nutzen möchten, stellen Sie sicher, dass "Sudo für Windows" in den Systemeinstellungen aktiviert ist oder führen Sie die Konsole als Administrator aus.
+
 ### 3. Zugriff
 Öffnen Sie Ihren Browser unter: [http://localhost:3000](http://localhost:3000)
 
-## 📂 Datenstruktur (Windows)
+## � Nutzung auf anderen Rechnern
+
+### Neues Setup (Installation)
+Um den Stack auf einem weiteren Rechner zu installieren, wiederholen Sie einfach die Schritte unter **Installation & Start**. Stellen Sie sicher, dass Docker und WSL 2 bereitstehen.
+
+### Zugriff im Netzwerk (Remote)
+Falls der Stack bereits auf einem Server/Rechner läuft und Sie von einem anderen Gerät im selben Netzwerk darauf zugreifen möchten:
+1. **IP-Adresse ermitteln**: Finden Sie die IP des Host-Rechners heraus (z.B. via `ipconfig`).
+2. **Firewall**: Stellen Sie sicher, dass Port `3000` (WebUI) und optional `11434` (Ollama) in der Windows-Firewall für eingehende Verbindungen freigegeben sind.
+3. **Browser**: Öffnen Sie `http://<IP-ADRESSE>:3000`.
+
+## �📂 Datenstruktur (Windows)
 
 Um Speicherplatz zu sparen und Daten für alle Benutzer verfügbar zu machen, nutzt dieses Projekt zentrale Pfade:
 - **Modelle**: `C:\ProgramData\Ollama`

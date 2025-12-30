@@ -22,7 +22,15 @@ foreach ($path in $paths) {
 Write-Host "Starte Container via Docker Compose..." -ForegroundColor Green
 docker-compose up -d
 
-# 4. Initiales Modell laden (Mistral)
+# 4. Warte bis Ollama bereit ist
+Write-Host "Warte auf Ollama Container..." -ForegroundColor Yellow
+$retryCount = 0
+while (!(docker ps --filter "name=ollama" --filter "status=running" --format "{{.Names}}") -and $retryCount -lt 10) {
+    Start-Sleep -Seconds 2
+    $retryCount++
+}
+
+# 5. Initiales Modell laden (Mistral)
 Write-Host "Lade Standard-Modell (Mistral)... Dies kann einige Minuten dauern." -ForegroundColor Yellow
 docker exec -it ollama ollama run mistral
 

@@ -11,11 +11,15 @@ Diese Dokumentation beschreibt das schlanke Setup der KI-Umgebung mittels Docker
 Der einfachste Weg ist die Nutzung der bereitgestellten Scripte. Diese erstellen alle Ordner, konfigurieren die GPU-Nutzung und starten den gesamten Stack (Ollama, Open WebUI, FalkorDB).
 
 1. **Script ausführen**:
-   - **Windows**: Rechtsklick auf `deploy_ai_stack.ps1` -> **Mit PowerShell ausführen**.
+   - **Windows**: Rechtsklick auf `deploy_ai_stack.ps1` -> **Mit PowerShell ausführen**. 
+     *Hinweis: Falls eine Fehlermeldung zur Skriptausführung erscheint, öffnen Sie eine PowerShell als Admin und geben Sie `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` ein.*
    - **WSL / Linux**: `chmod +x deploy_ai_stack.sh && ./deploy_ai_stack.sh`
+   
+   *Tipp: Unter Windows 11 kann "Sudo für Windows" in den Einstellungen aktiviert werden, um administrative Befehle direkt in der Bash/PowerShell zu autorisieren.*
 
 2. **Browser öffnen**:
    Gehen Sie auf [http://localhost:3000](http://localhost:3000).
+   *Hinweis: Für den Zugriff von anderen Rechnern im Netzwerk nutzen Sie die IP-Adresse des Hosts (z.B. http://192.168.1.50:3000).*
 
 3. **Erster Login**:
    Erstellen Sie beim ersten Aufruf einen Administrator-Account (lokal).
@@ -47,6 +51,7 @@ Sie können externe APIs einbinden, um neben lokalen Modellen auch GPT-4 oder Cl
 4. Die Keys sind sicher und werden durch die `.gitignore` nicht auf GitHub veröffentlicht.
 
 ## 6. Troubleshooting
+- **"No such container: ollama"**: Der Container konnte nicht gestartet werden. Prüfen Sie mit `docker logs ollama`, ob ein Fehler vorliegt (oft fehlende NVIDIA-Treiber oder Port-Konflikte).
 - **Keine GPU-Beschleunigung?** Prüfen Sie, ob die NVIDIA Container Toolkit Treiber installiert sind.
 - **Port belegt?** Ändern Sie die Ports in der `docker-compose.yml`.
 - **Container-Status prüfen**: `docker ps`

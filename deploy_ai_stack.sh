@@ -25,7 +25,13 @@ done
 echo -e "\e[32mStarte Container via Docker Compose...\e[0m"
 docker-compose up -d
 
-# 4. Initiales Modell laden (Mistral)
+# 4. Warte bis Ollama bereit ist
+echo -e "\e[33mWarte auf Ollama Container...\e[0m"
+until [ "$(docker inspect -f '{{.State.Running}}' ollama 2>/dev/null)" == "true" ]; do
+    sleep 2
+done
+
+# 5. Initiales Modell laden (Mistral)
 echo -e "\e[33mLade Standard-Modell (Mistral)... Dies kann einige Minuten dauern.\e[0m"
 docker exec -it ollama ollama run mistral
 
