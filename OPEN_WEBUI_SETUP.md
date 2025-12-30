@@ -67,7 +67,9 @@ Für Aufgaben, die eine Internetrecherche erfordern, eignen sich besonders:
 ### Websuche in Open WebUI aktivieren
 Das Modell allein surft nicht im Netz. Um die Websuche zu nutzen:
 1. Gehen Sie in Open WebUI auf **Settings** -> **Web Search**.
-2. Aktivieren Sie die Suche und wählen Sie eine Engine (z.B. **SearXNG**, **Google PSE** oder **Tavily**).
+2. Aktivieren Sie die Suche und wählen Sie eine Engine:
+   - **Google PSE**: 100 Anfragen/Tag kostenlos. Benötigt *API Key* und *Search Engine ID (CX)* aus der Google Cloud Console.
+   - **Tavily**: Speziell für KI optimiert. 1.000 Anfragen/Monat kostenlos. Registrierung auf [tavily.com](https://tavily.com/).
 3. Sobald konfiguriert, kann Open WebUI Informationen aus dem Internet abrufen und dem Modell als Kontext bereitstellen.
 
 ## 6. Troubleshooting
