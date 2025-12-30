@@ -2,11 +2,11 @@
 
 Diese Dokumentation beschreibt das schlanke Setup der KI-Umgebung mittels Docker.
 
-## 1. Ì≥ã Voraussetzungen
+## 1. Voraussetzungen
 - **Windows 10/11** mit **WSL 2** (`wsl --install`)
 - **Docker Desktop** (Einstellung: *Use the WSL 2 based engine*)
 
-## 2. Ì∫Ä Schnellstart (Automatisches Deployment)
+## 2. Schnellstart (Automatisches Deployment)
 
 Der einfachste Weg ist die Nutzung der bereitgestellten Scripte. Diese erstellen alle Ordner, konfigurieren die GPU-Nutzung und starten den gesamten Stack (Ollama, Open WebUI, FalkorDB).
 
@@ -20,13 +20,13 @@ Der einfachste Weg ist die Nutzung der bereitgestellten Scripte. Diese erstellen
 3. **Erster Login**:
    Erstellen Sie beim ersten Aufruf einen Administrator-Account (lokal).
 
-## 3. Ì≥Ç Datenablage (Systemweit)
+## 3. Datenablage (Systemweit)
 Um Speicherplatz zu sparen und Daten f√ºr alle Benutzer verf√ºgbar zu machen, liegen alle Dateien in `C:\ProgramData`:
 - **KI-Modelle**: `C:\ProgramData\Ollama`
 - **Dokumente & Datenbank**: `C:\ProgramData\OpenWebUI`
 - **Graph-Daten**: `C:\ProgramData\FalkorDB`
 
-## 4. Ì≤° Nutzung in Open WebUI
+## 4. Nutzung in Open WebUI
 
 ### Dokumenten-Analyse (RAG)
 1. Klicken Sie im Chat auf das **B√ºroklammer-Icon** (Ì≥é).
@@ -39,7 +39,7 @@ Neue Modelle k√∂nnen direkt √ºber die Weboberfl√§che oder das Terminal geladen w
 docker exec -it ollama ollama pull mistral
 ```
 
-## 5. Ìª†Ô∏è Troubleshooting
+## 5. Troubleshooting
 - **Keine GPU-Beschleunigung?** Pr√ºfen Sie, ob die NVIDIA Container Toolkit Treiber installiert sind.
 - **Port belegt?** √Ñndern Sie die Ports in der `docker-compose.yml`.
 - **Container-Status pr√ºfen**: `docker ps`
