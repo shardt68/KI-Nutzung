@@ -10,15 +10,14 @@ services:
     volumes:
       - ollama_data:/root/.ollama
       - C:\ProgramData\Ollama:/root/.ollama/models
-    # Falls Fehler "OCI runtime create failed" auftritt: 
-    # Entweder NVIDIA Container Toolkit installieren oder den folgenden 'deploy' Block entfernen (CPU-Modus)
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+    # Standard: CPU-Modus. Für GPU-Unterstützung (NVIDIA) die folgenden Zeilen einkommentieren:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:latest

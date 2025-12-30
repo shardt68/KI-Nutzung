@@ -4,7 +4,7 @@ Dieses Projekt bietet eine schlüsselfertige Lösung für die lokale Analyse von
 
 ## 🚀 Features
 
-- **Ollama**: Lokale Ausführung von LLMs (z.B. Mistral, Llama 3) mit GPU-Unterstützung.
+- **Ollama**: Lokale Ausführung von LLMs (z.B. Mistral, Llama 3). Standardmäßig im CPU-Modus, GPU-Unterstützung optional aktivierbar.
 - **Open WebUI**: Benutzerfreundliches Interface für Chat, Dokumenten-Upload (RAG) und Benutzerverwaltung.
 - **FalkorDB**: Graph-Datenbank zur Abbildung komplexer Abhängigkeiten (GraphRAG).
 - **Multi-User Ready**: Zentrale Datenablage unter `C:\ProgramData` für effiziente Ressourcennutzung.
@@ -14,7 +14,7 @@ Dieses Projekt bietet eine schlüsselfertige Lösung für die lokale Analyse von
 
 - **Windows 10/11** mit **WSL 2** installiert.
 - **Docker Desktop** (mit aktiviertem WSL 2 Backend).
-- **NVIDIA GPU** (empfohlen für flüssige Performance).
+- **NVIDIA GPU** (optional, für deutlich bessere Performance empfohlen).
 - **Sudo für Windows** (optional für Windows 11, um Bash-Scripte einfacher auszuführen).
 
 ## 🛠️ Installation & Start
