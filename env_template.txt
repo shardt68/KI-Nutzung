@@ -7,3 +7,6 @@ OPENAI_API_BASE_URL=https://api.openai.com/v1
 
 # Anthropic (Claude) API
 ANTHROPIC_API_KEY=ihr_anthropic_key_hier
+
+# Google Gemini API
+GOOGLE_API_KEY=ihr_gemini_key_hier
