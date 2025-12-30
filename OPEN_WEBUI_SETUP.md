@@ -55,8 +55,20 @@ docker exec -it ollama ollama pull mistral
 Sie können externe APIs einbinden, um neben lokalen Modellen auch GPT-4 oder Claude zu nutzen:
 1. Erstellen Sie eine Datei namens `.env` im Hauptverzeichnis (nutzen Sie `env_template.txt` als Vorlage).
 2. Tragen Sie dort Ihre API-Keys ein.
-3. Starten Sie den Stack neu: `docker-compose up -d`.
+3. Starten Sie den Stack neu: `docker-compose up -d --force-recreate`.
 4. Die Keys sind sicher und werden durch die `.gitignore` nicht auf GitHub veröffentlicht.
+
+### Empfohlene Modelle für Web-Recherche
+Für Aufgaben, die eine Internetrecherche erfordern, eignen sich besonders:
+- **GPT-4o (Omni)**: Aktueller Standard für schnelle und präzise Recherchen.
+- **GPT-4-Turbo**: Sehr gut für komplexe Analysen großer Datenmengen.
+- **Claude 3.5 Sonnet**: Exzellent für logische Zusammenfassungen.
+
+### Websuche in Open WebUI aktivieren
+Das Modell allein surft nicht im Netz. Um die Websuche zu nutzen:
+1. Gehen Sie in Open WebUI auf **Settings** -> **Web Search**.
+2. Aktivieren Sie die Suche und wählen Sie eine Engine (z.B. **SearXNG**, **Google PSE** oder **Tavily**).
+3. Sobald konfiguriert, kann Open WebUI Informationen aus dem Internet abrufen und dem Modell als Kontext bereitstellen.
 
 ## 6. Troubleshooting
 - **Performance zu langsam? (GPU aktivieren)**: Standardmäßig läuft der Stack im CPU-Modus. Um Ihre NVIDIA-GPU zu nutzen:
