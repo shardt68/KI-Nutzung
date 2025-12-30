@@ -42,8 +42,7 @@ Wählen Sie das passende Script für Ihre Umgebung:
 > **Hinweis für Windows 11:** Falls Sie das Bash-Script direkt in der Windows-Konsole nutzen möchten, stellen Sie sicher, dass "Sudo für Windows" in den Systemeinstellungen aktiviert ist oder führen Sie die Konsole als Administrator aus.
 
 ### 3. Zugriff
-Öffnen Sie Ihren Browser unter: [http://localhost:3000](http://localhost:3000)
-
+Öffnen Sie Ihren Browser unter: [http://localhost:3000](http://localhost:3000)Wählen Sie oben links das Modell (z.B. `mistral`) aus, um den Chat zu starten.
 ## � Nutzung auf anderen Rechnern
 
 ### Neues Setup (Installation)

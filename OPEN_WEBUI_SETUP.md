@@ -24,6 +24,9 @@ Der einfachste Weg ist die Nutzung der bereitgestellten Scripte. Diese erstellen
 3. **Erster Login**:
    Erstellen Sie beim ersten Aufruf einen Administrator-Account (lokal).
 
+4. **Modell auswählen**:
+   Klicken Sie oben links auf **"Modell auswählen"** und wählen Sie ein lokales Modell (z.B. `mistral:latest`) aus. Lokale Modelle werden automatisch von Ollama erkannt. Die `.env` Datei wird nur für *externe* APIs (wie OpenAI) benötigt.
+
 ## 3. Datenablage (Systemweit)
 Um Speicherplatz zu sparen und Daten für alle Benutzer verfügbar zu machen, liegen alle Dateien in `C:\ProgramData`:
 - **KI-Modelle**: `C:\ProgramData\Ollama`
