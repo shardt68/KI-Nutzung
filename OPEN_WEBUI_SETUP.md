@@ -46,6 +46,11 @@ Neue Modelle können direkt über die Weboberfläche oder das Terminal geladen w
 docker exec -it ollama ollama pull mistral
 ```
 
+**Empfohlene Modelle:**
+- **Llama 3 (8B)**: `docker exec -it ollama ollama pull llama3` (Allrounder)
+- **Phi-3 (Mini)**: `docker exec -it ollama ollama pull phi3` (Sehr schnell, gut für CPU)
+- **DeepSeek-Coder**: `docker exec -it ollama ollama pull deepseek-coder` (Für Programmierung)
+
 ## 5. 🔗 Externe KI-Server (OpenAI, Claude, etc.)
 Sie können externe APIs einbinden, um neben lokalen Modellen auch GPT-4 oder Claude zu nutzen:
 1. Erstellen Sie eine Datei namens `.env` im Hauptverzeichnis (nutzen Sie `env_template.txt` als Vorlage).
