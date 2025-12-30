@@ -10,6 +10,8 @@ services:
     volumes:
       - ollama_data:/root/.ollama
       - C:\ProgramData\Ollama:/root/.ollama/models
+    # Falls Fehler "OCI runtime create failed" auftritt: 
+    # Entweder NVIDIA Container Toolkit installieren oder den folgenden 'deploy' Block entfernen (CPU-Modus)
     deploy:
       resources:
         reservations:

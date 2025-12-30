@@ -51,7 +51,11 @@ Sie können externe APIs einbinden, um neben lokalen Modellen auch GPT-4 oder Cl
 4. Die Keys sind sicher und werden durch die `.gitignore` nicht auf GitHub veröffentlicht.
 
 ## 6. Troubleshooting
-- **"No such container: ollama"**: Der Container konnte nicht gestartet werden. Prüfen Sie mit `docker logs ollama`, ob ein Fehler vorliegt (oft fehlende NVIDIA-Treiber oder Port-Konflikte).
-- **Keine GPU-Beschleunigung?** Prüfen Sie, ob die NVIDIA Container Toolkit Treiber installiert sind.
+- **"OCI runtime create failed" / "failed to create shim task"**: Dies liegt meist an einer fehlenden oder fehlerhaften NVIDIA-GPU-Konfiguration.
+  1. Stellen Sie sicher, dass der aktuellste **NVIDIA Game Ready oder Studio Treiber** installiert ist.
+  2. Installieren Sie das **NVIDIA Container Toolkit** (falls nicht automatisch durch Docker Desktop geschehen).
+  3. In Docker Desktop: Einstellungen -> Resources -> WSL Integration -> Stellen Sie sicher, dass Ihre WSL-Distro aktiviert ist.
+  4. **Fallback auf CPU**: Falls keine NVIDIA-GPU vorhanden ist, entfernen Sie den Block `deploy: resources: ...` aus der `docker-compose.yml`.
+- **"No such container: ollama"**: Der Container konnte nicht gestartet werden. Prüfen Sie mit `docker logs ollama`, ob ein Fehler vorliegt.
 - **Port belegt?** Ändern Sie die Ports in der `docker-compose.yml`.
 - **Container-Status prüfen**: `docker ps`
