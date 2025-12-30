@@ -29,7 +29,7 @@ Um Speicherplatz zu sparen und Daten für alle Benutzer verfügbar zu machen, li
 ## 4. Nutzung in Open WebUI
 
 ### Dokumenten-Analyse (RAG)
-1. Klicken Sie im Chat auf das **Büroklammer-Icon** (���).
+1. Klicken Sie im Chat auf das **Büroklammer-Icon** (���).
 2. Laden Sie Ihr Dokument (PDF, DOCX, etc.) hoch.
 3. Stellen Sie Fragen zum Dokument (z.B. *"Fasse die Anforderungen zusammen"*).
 
@@ -39,7 +39,14 @@ Neue Modelle können direkt über die Weboberfläche oder das Terminal geladen w
 docker exec -it ollama ollama pull mistral
 ```
 
-## 5. Troubleshooting
+## 5. 🔗 Externe KI-Server (OpenAI, Claude, etc.)
+Sie können externe APIs einbinden, um neben lokalen Modellen auch GPT-4 oder Claude zu nutzen:
+1. Erstellen Sie eine Datei namens `.env` im Hauptverzeichnis (nutzen Sie `env_template.txt` als Vorlage).
+2. Tragen Sie dort Ihre API-Keys ein.
+3. Starten Sie den Stack neu: `docker-compose up -d`.
+4. Die Keys sind sicher und werden durch die `.gitignore` nicht auf GitHub veröffentlicht.
+
+## 6. Troubleshooting
 - **Keine GPU-Beschleunigung?** Prüfen Sie, ob die NVIDIA Container Toolkit Treiber installiert sind.
 - **Port belegt?** Ändern Sie die Ports in der `docker-compose.yml`.
 - **Container-Status prüfen**: `docker ps`

@@ -1,0 +1,9 @@
+# Kopieren Sie den Inhalt dieser Datei in eine neue Datei namens .env
+# Tragen Sie dort Ihre API Keys ein. Die .env Datei wird NICHT auf GitHub gepusht.
+
+# OpenAI API
+OPENAI_API_KEY=ihr_openai_key_hier
+OPENAI_API_BASE_URL=https://api.openai.com/v1
+
+# Anthropic (Claude) API
+ANTHROPIC_API_KEY=ihr_anthropic_key_hier
